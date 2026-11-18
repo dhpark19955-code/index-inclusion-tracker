@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지수 편입·편출 트래커</title>
+<meta name="description" content="KOSPI200 · MSCI · FTSE · Nasdaq-100 · S&P 500 편입·편출 예측, 백테스트, 공식 발표 대조 대시보드">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #faf9f5; --bg-card: #ffffff; --bg-soft: #f1efe8; --bg-muted: #e8e6dd;
+    --ink: #1c1c1a; --ink-2: #5f5e5a; --ink-3: #888780;
+    --line: rgba(28,28,26,0.08); --line-2: rgba(28,28,26,0.18);
+    --pos: #1d6b3a; --pos-bg: #e6f4eb;
+    --neg: #a32d2d; --neg-bg: #fbecec;
+    --info: #185fa5; --info-bg: #e6f1fb;
+    --warn: #854f0b; --warn-bg: #faeeda;
+    --sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --serif: 'Newsreader', Georgia, serif;
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161614; --bg-card: #1f1f1d; --bg-soft: #242421; --bg-muted: #2c2c29;
+      --ink: #f1efe8; --ink-2: #b4b2a9; --ink-3: #888780;
+      --line: rgba(241,239,232,0.08); --line-2: rgba(241,239,232,0.16);
+      --pos: #97c459; --pos-bg: rgba(151,196,89,0.12);
+      --neg: #f09595; --neg-bg: rgba(240,149,149,0.12);
+      --info: #85b7eb; --info-bg: rgba(133,183,235,0.12);
+      --warn: #ef9f27; --warn-bg: rgba(239,159,39,0.12);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--info); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 36px 16px 80px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 8px; }
+  h1 { font-family: var(--serif); font-weight: 500; font-style: italic; font-size: 36px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--ink-2); font-size: 14px; margin: 0; max-width: 760px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-top: 20px; padding: 12px 16px; background: var(--bg-card); border: 0.5px solid var(--line-2); border-radius: 10px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+  .toolbar b { color: var(--ink-2); font-weight: 500; }
+  .section-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 40px 0 14px; flex-wrap: wrap; }
+  .section-h h2 { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; margin: 0; }
+  .section-h .note { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-top: 18px; }
+  .tile { background: var(--bg-card); border: 0.5px solid var(--line-2); border-radius: 12px; padding: 16px 16px 14px; }
+  .tile .k { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.06em; text-transform: uppercase; }
+  .tile .v { font-family: var(--serif); font-size: 30px; font-weight: 500; line-height: 1.1; margin: 6px 0 4px; }
+  .tile .d { font-size: 12px; color: var(--ink-2); }
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+  .card { background: var(--bg-card); border: 0.5px solid var(--line-2); border-radius: 12px; padding: 18px; }
+  .card h3 { font-family: var(--serif); font-size: 19px; font-weight: 500; margin: 0 0 2px; }
+  .card .meta { font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-bottom: 12px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .col h4 { margin: 0 0 8px; font-size: 12px; font-weight: 600; color: var(--ink-2); letter-spacing: 0.04em; text-transform: uppercase; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 0; border-top: 0.5px solid var(--line); font-size: 13px; }
+  .row:first-of-type { border-top: none; }
+  .row .nm { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .cd { font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-right: 6px; }
+  .chip { display: inline-block; font-family: var(--mono); font-size: 10.5px; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+  .chip.strong { background: var(--pos-bg); color: var(--pos); }
+  .chip.watch { background: var(--warn-bg); color: var(--warn); }
+  .chip.miss { background: var(--neg-bg); color: var(--neg); }
+  .chip.info { background: var(--info-bg); color: var(--info); }
+  .chip.muted { background: var(--bg-muted); color: var(--ink-2); }
+  .summary-line { font-size: 13px; color: var(--ink-2); margin: 10px 0 0; padding-top: 10px; border-top: 0.5px solid var(--line); }
+  .summary-line b { color: var(--ink); font-weight: 600; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tab { background: var(--bg-card); border: 0.5px solid var(--line-2); color: var(--ink-2); padding: 7px 12px; border-radius: 8px; font-family: var(--sans); font-size: 13px; cursor: pointer; }
+  .tab.active { background: var(--ink); color: var(--bg-card); border-color: var(--ink); }
+  .tab .n { font-family: var(--mono); font-size: 10.5px; opacity: 0.7; margin-left: 6px; }
+  table { width: 100%; border-collapse: collapse; background: var(--bg-card); border: 0.5px solid var(--line-2); border-radius: 12px; overflow: hidden; font-size: 13px; }
+  th, td { padding: 9px 12px; text-align: left; border-top: 0.5px solid var(--line); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11px; color: var(--ink-3); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; background: var(--bg-soft); border-top: none; }
+  td.num { font-family: var(--mono); white-space: nowrap; }
+  .bar { position: relative; height: 8px; background: var(--bg-muted); border-radius: 4px; min-width: 90px; }
+  .bar > span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--pos); }
+  .bar.lo > span { background: var(--warn); }
+  tr.past td { color: var(--ink-3); }
+  .dday { font-family: var(--mono); font-size: 11px; padding: 2px 7px; border-radius: 4px; background: var(--info-bg); color: var(--info); white-space: nowrap; }
+  .dday.soon { background: var(--warn-bg); color: var(--warn); }
+  .dday.past { background: var(--bg-muted); color: var(--ink-3); }
+  .rules { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+  .rule { background: var(--bg-card); border: 0.5px solid var(--line-2); border-radius: 12px; padding: 16px; font-size: 13px; }
+  .rule h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; margin: 0 0 6px; }
+  .rule p { margin: 0 0 6px; color: var(--ink-2); }
+  .rule .approx { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+  .foot { margin-top: 48px; padding-top: 16px; border-top: 0.5px solid var(--line-2); font-size: 12px; color: var(--ink-3); }
+  .err { margin-top: 20px; padding: 14px 16px; background: var(--warn-bg); color: var(--warn); border-radius: 10px; font-size: 13px; }
+  @media (max-width: 860px) {
+    .tiles { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .cards, .rules { grid-template-columns: 1fr; }
+    h1 { font-size: 28px; }
+  }
+  @media (max-width: 560px) { .cols { grid-template-columns: 1fr; } .tiles { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Index inclusion tracker · KOSPI200 / MSCI / FTSE / Nasdaq-100 / S&amp;P 500</div>
+  <h1>지수 편입·편출 트래커</h1>
+  <p class="subtitle">지수사 공식 방법론을 코드로 옮겨 정기변경 종목을 발표 전에 예측하고, 과거 리뷰 재현과 공식 발표 대조로 정확도를 검증합니다. 유료 데이터 없이 ETF 보유종목 공시·거래소 API·DART·SEC XBRL 만 씁니다.</p>
+  <div class="toolbar">
+    <span>예측 스냅샷 <b id="asof">-</b> 종가</span>
+    <span>공식 대조 반영 <b id="built">-</b></span>
+    <span><a href="https://github.com/dhpark19955-code/index-inclusion-tracker">소스·방법론 (GitHub)</a></span>
+  </div>
+  <div id="tiles" class="tiles"></div>
+  <div id="err" class="err" style="display:none"></div>
+
+  <div class="section-h"><h2>공식 발표 대조</h2><span class="note">예측 스냅샷 vs 지수사 발표 (발표 후 기록)</span></div>
+  <div id="reviews" class="cards"></div>
+
+  <div class="section-h"><h2>예측 스냅샷</h2><span class="note" id="snapnote"></span></div>
+  <div id="tabs" class="tabs"></div>
+  <div id="pred" class="card"></div>
+
+  <div class="section-h"><h2>백테스트 - 과거 리뷰 재현</h2><span class="note">정답지: MSCI 공식 변경목록 PDF · KODEX 200 변경 전후 · Nasdaq 공식 발표</span></div>
+  <table id="bt"><thead><tr><th>지수 · 리뷰</th><th>편입</th><th></th><th>편출</th><th></th><th>해석</th></tr></thead><tbody></tbody></table>
+
+  <div class="section-h"><h2>리뷰 일정</h2><span class="note">D-day 는 오늘 기준으로 계산</span></div>
+  <table id="cal"><thead><tr><th>지수</th><th>이벤트</th><th>날짜</th><th>D-day</th><th>비고</th><th>근거</th></tr></thead><tbody></tbody></table>
+
+  <div class="section-h"><h2>지수별 판정 규칙</h2><span class="note">공식 방법론 그대로, 비공개 값만 근사·역산</span></div>
+  <div class="rules">
+    <div class="rule"><h3>KOSPI200</h3><p>6개월 일평균 시총·거래대금, 산업군별 누적 85% 선정 후 기존 110% / 신규 90% 버퍼(인원 반올림), 200개 맞춤, 시총 50위 특례.</p><div class="approx">근사: 산업군 분류(비공개) - 신·구 두 분류 체계가 같은 판정일 때만 '유력'</div></div>
+    <div class="rule"><h3>MSCI Korea · Japan</h3><p>편입 시총 ≥ 1.5C · 유동시총 ≥ 0.5C, 유지 ≥ 2/3C · 1/3C, 외국인 한도 여유, 회전율. 일본은 종목 수 조정 규칙 추가.</p><div class="approx">역산: 기준선 C (증권사 편입선 ÷ 1.5, 밴드 밖이면 '경합')</div></div>
+    <div class="rule"><h3>FTSE All-World Korea</h3><p>지역 백분위(86% / 92%) 규칙을 이론대로 계산하면 기준선이 부풀어, 실제 구성·소형지수 분포를 앵커로 편입·편출선을 둠. 시총 재순위는 3·9월만.</p><div class="approx">앵커: 구성종목 유동시총 하위 5% / 미승격 상위 5%</div></div>
+    <div class="rule"><h3>Nasdaq-100</h3><p>11월 말 순위: 75위 → 76~100위 기존 → 101~125위 버퍼(직전 재구성 100위 이내만) → 충원. 해외 ADR 은 미국 상장분만. Fast Entry 는 기존 40위 시총 초과 시.</p><div class="approx">재계산: 버퍼 자격을 위한 직전 재구성 순위</div></div>
+    <div class="rule"><h3>S&amp;P 500</h3><p>위원회 재량이라 요건 통과 후보 풀만 제시: 시총 하한, 유동비율 ≥ 0.10(SEC 공시 유동시총), GAAP 최근분기·4분기합 흑자(SEC XBRL), 상장 12개월, 도미사일, 편출 후 1년 제외.</p><div class="approx">확인: 2026년 편입 3건 모두 필터 통과, 편출 3건 모두 위험군 포착</div></div>
+    <div class="rule"><h3>검증 방식</h3><p>ETF 보유종목을 과거 날짜로 조회해 리뷰 직전 구성을 복원하고, 당시 가격으로 시총을 다시 계산해 공식 변경 목록과 대조. 일본은 결과를 모르는 조건의 워크포워드.</p><div class="approx">틀린 지점마다 공식 원문·데이터로 원인 확인 후 규칙 보정</div></div>
+  </div>
+
+  <div class="foot">예측은 모델 추정이며 공식 발표가 아닙니다. 투자 권유가 아니며, 모든 수치는 공개 자료에서 계산했습니다. 데이터 출처와 한계는 저장소 README 에 있습니다.</div>
+</div>
+
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  let d;
+  try {
+    const r = await fetch('data.json', { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    d = await r.json();
+  } catch (e) {
+    $('#err').style.display = 'block';
+    $('#err').textContent = 'data.json 을 읽지 못했습니다. file:// 로 열면 fetch 가 막히니 저장소 루트에서 python -m http.server 8000 후 http://localhost:8000 으로 여세요. (' + e + ')';
+    return;
+  }
+  $('#asof').textContent = d.as_of;
+  $('#built').textContent = d.built;
+  $('#snapnote').textContent = d.as_of + ' 종가 기준 · 판정 ' + Object.values(d.predictions).reduce((a, b) => a + b.length, 0) + '건';
+
+  // ---- tiles
+  const k2 = d.reviews.find((r) => r.index === 'KOSPI200');
+  const bt = d.backtests;
+  const btHit = bt.reduce((a, b) => a + b.add[0] + b.drop[0], 0), btN = bt.reduce((a, b) => a + b.add[1] + b.drop[1], 0);
+  const tiles = [
+    ['지수', d.index_order.length + '개', 'KOSPI200 · MSCI 한국·일본 · FTSE · Nasdaq-100 · S&P 500'],
+    ['백테스트 재현', btHit + '/' + btN, '과거 리뷰 ' + bt.length + '회의 실제 편입·편출 중 재현한 수'],
+  ];
+  if (k2) {
+    const s = k2.summary;
+    tiles.push(['KOSPI200 ' + k2.effective.slice(0, 7) + ' 대조', (s.adds.strong + s.adds.watch) + '/' + s.adds.n + ' · ' + (s.drops.strong + s.drops.watch) + '/' + s.drops.n,
+      '편입 · 편출 포착 (유력 ' + s.adds.strong + '+' + s.drops.strong + ', 경합·위험 ' + s.adds.watch + '+' + s.drops.watch + ') · 발표 ' + k2.announced]);
+  }
+  tiles.push(['데이터 비용', '0', '유료 단말·API 없이 공개 소스만']);
+  $('#tiles').innerHTML = tiles.map(([k, v, dd]) => `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div><div class="d">${esc(dd)}</div></div>`).join('');
+
+  // ---- reviews
+  const chipOf = (st) => st === 'hit_strong' ? '<span class="chip strong">유력 적중</span>' : st === 'hit_watch' ? '<span class="chip watch">경합·위험 포착</span>' : st === 'wrong_side' ? '<span class="chip miss">반대 판정</span>' : '<span class="chip miss">미포착</span>';
+  const rowOf = (x) => `<div class="row"><span class="nm"><span class="cd">${esc(x.code)}</span>${esc(x.name)}<span class="cd" style="margin-left:6px">${esc(x.verdict)}</span></span>${chipOf(x.status)}</div>`;
+  $('#reviews').innerHTML = d.reviews.map((r) => {
+    if (r.no_change) {
+      return `<div class="card"><h3>${esc(r.index)} ${esc(r.review)}</h3><div class="meta">발표 ${esc(r.announced)} · 효력 ${esc(r.effective)}</div>
+        <p style="margin:0 0 10px;font-size:13px">${esc(r.note)}</p>
+        <div class="col"><h4>스냅샷 판정의 결과</h4>
+        ${r.false_strong.map((x) => `<div class="row"><span class="nm"><span class="cd">${esc(x.code)}</span>${esc(x.name)}<span class="cd" style="margin-left:6px">${esc(x.verdict)}</span></span><span class="chip miss">미실현</span></div>`).join('')}
+        ${r.watch_not_realized.map((x) => `<div class="row"><span class="nm"><span class="cd">${esc(x.code)}</span>${esc(x.name)}<span class="cd" style="margin-left:6px">${esc(x.verdict)}</span></span><span class="chip muted">미실현 (경합·위험)</span></div>`).join('')}
+        </div>
+        <p class="summary-line">유력 1건(고려아연)은 요건을 넘고도 4회 연속 미편입이던 종목으로, 스냅샷 메모에 'MSCI 개별 판단, 가능성 낮게 볼 것'으로 적어 둔 사례. 편출 위험 1건(유한양행)은 발표 전 주가 반등으로 잔류.</p></div>`;
+    }
+    const s = r.summary;
+    return `<div class="card"><h3>${esc(r.index)} ${esc(r.review)}</h3><div class="meta">발표 ${esc(r.announced)} · 효력 ${esc(r.effective)} · 스냅샷 ${esc(d.as_of)}</div>
+      <div class="cols"><div class="col"><h4>편입 ${s.adds.n}</h4>${r.adds.map(rowOf).join('')}</div><div class="col"><h4>편출 ${s.drops.n}</h4>${r.drops.map(rowOf).join('')}</div></div>
+      <p class="summary-line">편입 <b>${s.adds.strong + s.adds.watch}/${s.adds.n}</b> 포착(유력 ${s.adds.strong}, 경합 ${s.adds.watch}, 미포착 ${s.adds.miss}) · 편출 <b>${s.drops.strong + s.drops.watch}/${s.drops.n}</b> 포착(유력 ${s.drops.strong}, 위험 ${s.drops.watch}, 미포착 ${s.drops.miss}) · 유력인데 빗나감 ${r.false_strong.length}건${r.false_strong.length ? ' (' + r.false_strong.map((x) => x.name).join(', ') + ')' : ''} · 경합·위험 중 미실현 ${r.false_watch_n}건</p></div>`;
+  }).join('');
+
+  // ---- predictions tabs
+  const tabs = $('#tabs');
+  const render = (idx) => {
+    [...tabs.children].forEach((t) => t.classList.toggle('active', t.dataset.idx === idx));
+    const rows = d.predictions[idx] || [];
+    const grp = (side) => rows.filter((r) => r.side === side).sort((a, b) => (a.strength === 'strong' ? 0 : 1) - (b.strength === 'strong' ? 0 : 1));
+    const chip = (r) => `<span class="chip ${r.strength === 'strong' ? 'strong' : r.strength === 'watch' ? 'watch' : 'info'}">${esc(r.verdict)}</span>`;
+    const list = (arr) => arr.length ? arr.map((r) => `<div class="row"><span class="nm"><span class="cd">${esc(r.code)}</span>${esc(r.name)}</span>${chip(r)}</div>`).join('') : '<div class="row" style="color:var(--ink-3)">해당 없음</div>';
+    const other = rows.filter((r) => r.side === 'other');
+    $('#pred').innerHTML = `<div class="cols"><div class="col"><h4>편입 · 승격 (${grp('add').length})</h4>${list(grp('add'))}</div><div class="col"><h4>편출 · 강등 (${grp('drop').length})</h4>${list(grp('drop'))}</div></div>` +
+      (other.length ? `<div class="col" style="margin-top:14px"><h4>비고 · 요건 확인 (${other.length})</h4>${list(other)}</div>` : '');
+  };
+  tabs.innerHTML = d.index_order.map((idx) => `<button class="tab" data-idx="${esc(idx)}">${esc(idx)}<span class="n">${(d.predictions[idx] || []).length}</span></button>`).join('');
+  tabs.addEventListener('click', (e) => { const t = e.target.closest('.tab'); if (t) render(t.dataset.idx); });
+  render(d.index_order[0]);
+
+  // ---- backtests
+  const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
+  $('#bt tbody').innerHTML = bt.map((b) => `<tr><td>${esc(b.index)} <span class="cd" style="font-family:var(--mono);font-size:11px;color:var(--ink-3)">${esc(b.review)}</span></td>
+    <td class="num">${b.add[0]}/${b.add[1]}</td><td><div class="bar ${pct(...b.add) < 70 ? 'lo' : ''}"><span style="width:${pct(...b.add)}%"></span></div></td>
+    <td class="num">${b.drop[0]}/${b.drop[1]}</td><td><div class="bar ${pct(...b.drop) < 70 ? 'lo' : ''}"><span style="width:${pct(...b.drop)}%"></span></div></td>
+    <td style="color:var(--ink-2)">${esc(b.note)}</td></tr>`).join('');
+
+  // ---- calendar
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const dday = (s) => Math.round((new Date(s + 'T00:00:00') - today) / 86400000);
+  const cal = [...d.calendar].sort((a, b) => a.date.localeCompare(b.date));
+  $('#cal tbody').innerHTML = cal.map((c) => { const n = dday(c.date); const cls = n < 0 ? 'past' : n <= 14 ? 'soon' : '';
+    return `<tr class="${n < 0 ? 'past' : ''}"><td>${esc(c.index)}</td><td>${esc(c.event)}</td><td class="num">${esc(c.date)}</td><td><span class="dday ${cls}">${n < 0 ? 'D+' + (-n) : n === 0 ? 'D-day' : 'D-' + n}</span></td><td style="color:var(--ink-2)">${esc(c.kst_note)}${c.status === '예상' ? ' <span class="chip muted">예상</span>' : ''}</td><td style="color:var(--ink-3);font-size:12px">${esc(c.source)}</td></tr>`; }).join('');
+})();
+</script>
+</body>
+</html>

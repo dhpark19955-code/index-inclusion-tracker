@@ -1,0 +1,1827 @@
+{
+ "as_of": "2026-10-14",
+ "built": "2026-11-18",
+ "index_order": [
+  "KOSPI200",
+  "MSCI Korea",
+  "MSCI Japan",
+  "FTSE",
+  "Nasdaq-100",
+  "S&P 500"
+ ],
+ "counts": [
+  {
+   "index": "KOSPI200",
+   "n": 34,
+   "strong_add": 5,
+   "strong_drop": 4,
+   "verdicts": {
+    "편입 유력": 5,
+    "편입 경합(KRICS 분류 기준만)": 5,
+    "편출 위험(경계)": 6,
+    "편입 경합(구 GICS 분류 기준만)": 2,
+    "편출 유력": 4,
+    "편출 위험(KRICS 분류 기준만)": 6,
+    "편입 경합(경계)": 3,
+    "편출 위험(구 GICS 분류 기준만)": 3
+   }
+  },
+  {
+   "index": "MSCI Korea",
+   "n": 4,
+   "strong_add": 1,
+   "strong_drop": 0,
+   "verdicts": {
+    "편입 유력": 1,
+    "편입 요건 미달(외국인한도)": 1,
+    "편입 경합(시총 편입선 근접)": 1,
+    "편출 위험(유지선 근접)": 1
+   }
+  },
+  {
+   "index": "MSCI Japan",
+   "n": 14,
+   "strong_add": 0,
+   "strong_drop": 4,
+   "verdicts": {
+    "편입 경합(편입선 근접)": 1,
+    "편입 경합(기준선 하단이면 편입)": 1,
+    "편출 위험(종목수 경계)": 8,
+    "편출 유력(종목수 조정 — 버퍼 하위)": 4
+   }
+  },
+  {
+   "index": "FTSE",
+   "n": 31,
+   "strong_add": 0,
+   "strong_drop": 0,
+   "verdicts": {
+    "편입 불가(외국인한도 여유<20%)": 1,
+    "편입 후보(3월 리뷰)": 9,
+    "편입 관찰(3월 리뷰)": 3,
+    "편출 후보(3월 리뷰)": 11,
+    "편출 관찰(3월 리뷰)": 7
+   }
+  },
+  {
+   "index": "Nasdaq-100",
+   "n": 29,
+   "strong_add": 3,
+   "strong_drop": 3,
+   "verdicts": {
+    "편입 확인필요(해외 ADR — 미국상장분 시총 기준)": 5,
+    "편입 유력": 3,
+    "편입 경합(버퍼 종목에 밀림)": 6,
+    "편입 경합(순위 상승 시)": 6,
+    "편출 유력(버퍼 자격 없음 — 직전 재구성 100위 밖)": 2,
+    "편출 위험(101~125위 버퍼로 유지)": 6,
+    "편출 유력": 1
+   }
+  },
+  {
+   "index": "S&P 500",
+   "n": 58,
+   "strong_add": 3,
+   "strong_drop": 0,
+   "verdicts": {
+    "편입 유력": 3,
+    "편입 후보(요건 충족)": 11,
+    "요건 미달(관찰)": 37,
+    "편입 후보(유동시총 확인)": 1,
+    "편출 위험(하한 35% 미만)": 6
+   }
+  }
+ ],
+ "predictions": {
+  "KOSPI200": [
+   {
+    "code": "000500",
+    "name": "가온전선",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "353200",
+    "name": "대덕전자",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "103590",
+    "name": "일진전기",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "336260",
+    "name": "두산퓨얼셀",
+    "verdict": "편입 경합(KRICS 분류 기준만)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "031210",
+    "name": "서울보증보험",
+    "verdict": "편입 경합(KRICS 분류 기준만)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "004800",
+    "name": "효성",
+    "verdict": "편입 경합(KRICS 분류 기준만)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "139130",
+    "name": "iM금융지주",
+    "verdict": "편출 위험(경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "018670",
+    "name": "SK가스",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "071970",
+    "name": "HD현대마린엔진",
+    "verdict": "편출 위험(경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "112610",
+    "name": "씨에스윈드",
+    "verdict": "편출 위험(경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "005070",
+    "name": "코스모신소재",
+    "verdict": "편입 경합(구 GICS 분류 기준만)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "361610",
+    "name": "SK아이이테크놀로지",
+    "verdict": "편출 유력",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "017960",
+    "name": "한국카본",
+    "verdict": "편출 위험(KRICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "192080",
+    "name": "더블유게임즈",
+    "verdict": "편출 위험(경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "032350",
+    "name": "롯데관광개발",
+    "verdict": "편입 경합(KRICS 분류 기준만)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "009450",
+    "name": "경동나비엔",
+    "verdict": "편입 경합(경계)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "006110",
+    "name": "삼아알미늄",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "009240",
+    "name": "한샘",
+    "verdict": "편출 위험(구 GICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "137310",
+    "name": "에스디바이오센서",
+    "verdict": "편출 위험(경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "285130",
+    "name": "SK케미칼",
+    "verdict": "편출 위험(경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "006650",
+    "name": "대한유화",
+    "verdict": "편출 위험(KRICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "069260",
+    "name": "TKG휴켐스",
+    "verdict": "편출 위험(KRICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "002960",
+    "name": "한국쉘석유",
+    "verdict": "편입 경합(구 GICS 분류 기준만)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "001680",
+    "name": "대상",
+    "verdict": "편출 위험(KRICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "268280",
+    "name": "미원에스씨",
+    "verdict": "편출 위험(KRICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "002840",
+    "name": "미원상사",
+    "verdict": "편출 위험(KRICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "0220W0",
+    "name": "한화머시너리앤서비스홀딩스",
+    "verdict": "편출 유력",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "016380",
+    "name": "KG스틸",
+    "verdict": "편입 경합(KRICS 분류 기준만)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "005810",
+    "name": "풍산홀딩스",
+    "verdict": "편입 경합(경계)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "003300",
+    "name": "한일홀딩스",
+    "verdict": "편입 경합(경계)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "003030",
+    "name": "세아제강지주",
+    "verdict": "편출 위험(구 GICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "005420",
+    "name": "코스모화학",
+    "verdict": "편출 유력",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "002030",
+    "name": "아세아",
+    "verdict": "편출 위험(구 GICS 분류 기준만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "008730",
+    "name": "율촌화학",
+    "verdict": "편출 유력",
+    "side": "drop",
+    "strength": "strong"
+   }
+  ],
+  "MSCI Korea": [
+   {
+    "code": "010130",
+    "name": "고려아연",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "030200",
+    "name": "KT",
+    "verdict": "편입 요건 미달(외국인한도)",
+    "side": "add",
+    "strength": "info"
+   },
+   {
+    "code": "036930",
+    "name": "주성엔지니어링",
+    "verdict": "편입 경합(시총 편입선 근접)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "000100",
+    "name": "유한양행",
+    "verdict": "편출 위험(유지선 근접)",
+    "side": "drop",
+    "strength": "watch"
+   }
+  ],
+  "MSCI Japan": [
+   {
+    "code": "6963",
+    "name": "ROHM Co., Ltd.",
+    "verdict": "편입 경합(편입선 근접)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "5831",
+    "name": "Shizuoka Financial Group,Inc.",
+    "verdict": "편입 경합(기준선 하단이면 편입)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "9021",
+    "name": "West Japan Railway Company",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "9602",
+    "name": "Toho Co., Ltd.",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "3003",
+    "name": "Hulic Co., Ltd.",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "7912",
+    "name": "Dai Nippon Printing Co., Ltd.",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "9202",
+    "name": "ANA Holdings Inc.",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "5201",
+    "name": "AGC Inc.",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "4151",
+    "name": "Kyowa Kirin Co., Ltd.",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "6841",
+    "name": "Yokogawa Electric Corporation",
+    "verdict": "편출 위험(종목수 경계)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "8951",
+    "name": "Nippon Building Fund Inc.",
+    "verdict": "편출 유력(종목수 조정 — 버퍼 하위)",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "9042",
+    "name": "Hankyu Hanshin Holdings, Inc.",
+    "verdict": "편출 유력(종목수 조정 — 버퍼 하위)",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "1878",
+    "name": "Daito Trust Construction Co.,Ltd.",
+    "verdict": "편출 유력(종목수 조정 — 버퍼 하위)",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "7201",
+    "name": "Nissan Motor Co., Ltd.",
+    "verdict": "편출 유력(종목수 조정 — 버퍼 하위)",
+    "side": "drop",
+    "strength": "strong"
+   }
+  ],
+  "FTSE": [
+   {
+    "code": "030200",
+    "name": "KT",
+    "verdict": "편입 불가(외국인한도 여유<20%)",
+    "side": "add",
+    "strength": "info"
+   },
+   {
+    "code": "036930",
+    "name": "주성엔지니어링",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "353200",
+    "name": "대덕전자",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "047040",
+    "name": "대우건설",
+    "verdict": "편입 관찰(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "062040",
+    "name": "산일전기",
+    "verdict": "편입 관찰(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "240810",
+    "name": "원익IPS",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "039490",
+    "name": "키움증권",
+    "verdict": "편입 관찰(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "058470",
+    "name": "리노공업",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "039030",
+    "name": "이오테크닉스",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "222800",
+    "name": "심텍",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "000990",
+    "name": "DB하이텍",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "175330",
+    "name": "JB금융지주",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "029780",
+    "name": "삼성카드",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "403870",
+    "name": "HPSP",
+    "verdict": "편입 후보(3월 리뷰)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "022100",
+    "name": "포스코DX",
+    "verdict": "편출 관찰(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "008930",
+    "name": "한미사이언스",
+    "verdict": "편출 관찰(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "489790",
+    "name": "한화비전",
+    "verdict": "편출 관찰(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "263750",
+    "name": "펄어비스",
+    "verdict": "편출 관찰(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "081660",
+    "name": "미스토홀딩스",
+    "verdict": "편출 관찰(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "204320",
+    "name": "HL만도",
+    "verdict": "편출 관찰(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "139480",
+    "name": "이마트",
+    "verdict": "편출 관찰(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "051600",
+    "name": "한전KPS",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "002790",
+    "name": "아모레퍼시픽홀딩스",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "007070",
+    "name": "GS리테일",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "068760",
+    "name": "셀트리온제약",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "000120",
+    "name": "CJ대한통운",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "361610",
+    "name": "SK아이이테크놀로지",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "006280",
+    "name": "녹십자",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "008770",
+    "name": "호텔신라",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "001570",
+    "name": "금양",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "0220W0",
+    "name": "한화머시너리앤서비스홀딩스",
+    "verdict": "편출 후보(3월 리뷰)",
+    "side": "drop",
+    "strength": "watch"
+   }
+  ],
+  "Nasdaq-100": [
+   {
+    "code": "SKHY",
+    "name": "SK hynix Inc. American Depositary Shares",
+    "verdict": "편입 확인필요(해외 ADR — 미국상장분 시총 기준)",
+    "side": "add",
+    "strength": "info"
+   },
+   {
+    "code": "SNY",
+    "name": "Sanofi ADS",
+    "verdict": "편입 확인필요(해외 ADR — 미국상장분 시총 기준)",
+    "side": "add",
+    "strength": "info"
+   },
+   {
+    "code": "NTES",
+    "name": "NetEase Inc. American Depositary Shares",
+    "verdict": "편입 확인필요(해외 ADR — 미국상장분 시총 기준)",
+    "side": "add",
+    "strength": "info"
+   },
+   {
+    "code": "NTRA",
+    "name": "Natera Inc. Common Stock",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "TEAM",
+    "name": "Atlassian Corporation Class A Common Stock",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "EBAY",
+    "name": "eBay Inc. Common Stock",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "ARGX",
+    "name": "argenx SE American Depositary Shares",
+    "verdict": "편입 확인필요(해외 ADR — 미국상장분 시총 기준)",
+    "side": "add",
+    "strength": "info"
+   },
+   {
+    "code": "MDLN",
+    "name": "Medline Inc. Class A Common Stock",
+    "verdict": "편입 경합(버퍼 종목에 밀림)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "NTAP",
+    "name": "NetApp Inc. Common Stock",
+    "verdict": "편입 경합(버퍼 종목에 밀림)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "FLEX",
+    "name": "Flex Ltd. Ordinary Shares",
+    "verdict": "편입 경합(버퍼 종목에 밀림)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "ILMN",
+    "name": "Illumina Inc. Common Stock",
+    "verdict": "편입 경합(버퍼 종목에 밀림)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "RVMD",
+    "name": "Revolution Medicines Inc. Common Stock",
+    "verdict": "편입 경합(버퍼 종목에 밀림)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "ONC",
+    "name": "BeOne Medicines Ltd. American Depositary Shares",
+    "verdict": "편입 확인필요(해외 ADR — 미국상장분 시총 기준)",
+    "side": "add",
+    "strength": "info"
+   },
+   {
+    "code": "OKTA",
+    "name": "Okta Inc. Class A Common Stock",
+    "verdict": "편입 경합(버퍼 종목에 밀림)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "CRDO",
+    "name": "Credo Technology Group Holding Ltd Ordinary Shares",
+    "verdict": "편입 경합(순위 상승 시)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "ODFL",
+    "name": "Old Dominion Freight Line Inc. Common Stock",
+    "verdict": "편출 유력(버퍼 자격 없음 — 직전 재구성 100위 밖)",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "PAYX",
+    "name": "Paychex Inc. Common Stock",
+    "verdict": "편출 위험(101~125위 버퍼로 유지)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "ZS",
+    "name": "Zscaler Inc. Common Stock",
+    "verdict": "편입 경합(순위 상승 시)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "ROP",
+    "name": "Roper Technologies Inc. Common Stock",
+    "verdict": "편출 위험(101~125위 버퍼로 유지)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "FER",
+    "name": "Ferrovial N.V. Ordinary Shares",
+    "verdict": "편출 위험(101~125위 버퍼로 유지)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "CBRS",
+    "name": "Cerebras Systems Inc. Class A Common Stock",
+    "verdict": "편입 경합(순위 상승 시)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "STLD",
+    "name": "Steel Dynamics Inc.",
+    "verdict": "편입 경합(순위 상승 시)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "UAL",
+    "name": "United Airlines Holdings Inc. Common Stock",
+    "verdict": "편입 경합(순위 상승 시)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "BIIB",
+    "name": "Biogen Inc. Common Stock",
+    "verdict": "편입 경합(순위 상승 시)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "AXON",
+    "name": "Axon Enterprise Inc. Common Stock",
+    "verdict": "편출 위험(101~125위 버퍼로 유지)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "DXCM",
+    "name": "DexCom Inc. Common Stock",
+    "verdict": "편출 유력(버퍼 자격 없음 — 직전 재구성 100위 밖)",
+    "side": "drop",
+    "strength": "strong"
+   },
+   {
+    "code": "GEHC",
+    "name": "GE HealthCare Technologies Inc. Common Stock ",
+    "verdict": "편출 위험(101~125위 버퍼로 유지)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "ALNY",
+    "name": "Alnylam Pharmaceuticals Inc. Common Stock",
+    "verdict": "편출 위험(101~125위 버퍼로 유지)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "CPRT",
+    "name": "Copart Inc. (DE) Common Stock",
+    "verdict": "편출 유력",
+    "side": "drop",
+    "strength": "strong"
+   }
+  ],
+  "S&P 500": [
+   {
+    "code": "ALAB",
+    "name": "Astera Labs Inc. Common Stock",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "OKTA",
+    "name": "Okta Inc. Class A Common Stock",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "CRDO",
+    "name": "Credo Technology Group Holding Ltd Ordinary Shares",
+    "verdict": "편입 유력",
+    "side": "add",
+    "strength": "strong"
+   },
+   {
+    "code": "RPRX",
+    "name": "Royalty Pharma plc Class A Ordinary Shares ",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "MDB",
+    "name": "MongoDB Inc. Class A Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "ALNY",
+    "name": "Alnylam Pharmaceuticals Inc. Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "ZM",
+    "name": "Zoom Communications Inc. Class A Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "AFRM",
+    "name": "Affirm Holdings Inc. Class A Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "LPLA",
+    "name": "LPL Financial Holdings Inc. Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "TW",
+    "name": "Tradeweb Markets Inc. Class A Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "ENTG",
+    "name": "Entegris Inc. Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "UTHR",
+    "name": "United Therapeutics Corporation Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "FCNCA",
+    "name": "First Citizens BancShares Inc. Class A Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "MTSI",
+    "name": "MACOM Technology Solutions Holdings Inc. Common Stock",
+    "verdict": "편입 후보(요건 충족)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "SPCX",
+    "name": "Space Exploration Technologies Corp. Class A Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "SKHY",
+    "name": "SK hynix Inc. American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ASML",
+    "name": "ASML Holding N.V. New York Registry Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ARM",
+    "name": "Arm Holdings plc American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "SHOP",
+    "name": "Shopify Inc. Class A Subordinate Voting Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "PDD",
+    "name": "PDD Holdings Inc. American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "SNY",
+    "name": "Sanofi ADS",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "MELI",
+    "name": "MercadoLibre Inc. Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "NTES",
+    "name": "NetEase Inc. American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "MSTR",
+    "name": "Strategy Inc Common Stock Class A",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "NTRA",
+    "name": "Natera Inc. Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "NBIS",
+    "name": "Nebius Group N.V. Class A Ordinary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "TEAM",
+    "name": "Atlassian Corporation Class A Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ARGX",
+    "name": "argenx SE American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "CCEP",
+    "name": "Coca-Cola Europacific Partners plc Ordinary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "MDLN",
+    "name": "Medline Inc. Class A Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "TRI",
+    "name": "Thomson Reuters Corporation Common Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "CRWV",
+    "name": "CoreWeave Inc. Class A Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "RVMD",
+    "name": "Revolution Medicines Inc. Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "RKLB",
+    "name": "Rocket Lab Corporation Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ONC",
+    "name": "BeOne Medicines Ltd. American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ZS",
+    "name": "Zscaler Inc. Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "FER",
+    "name": "Ferrovial N.V. Ordinary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "JD",
+    "name": "JD.com Inc. American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "VOD",
+    "name": "Vodafone Group Plc American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "CBRS",
+    "name": "Cerebras Systems Inc. Class A Common Stock",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ERIC",
+    "name": "Ericsson American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ESLT",
+    "name": "Elbit Systems Ltd. Ordinary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "BIDU",
+    "name": "Baidu Inc. ADS",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "RYAAY",
+    "name": "Ryanair Holdings plc American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "GFS",
+    "name": "GlobalFoundries Inc. Ordinary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "BSP",
+    "name": "Bending Spoons S.p.A. Ordinary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "ROIV",
+    "name": "Roivant Sciences Ltd. Common Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "TSEM",
+    "name": "Tower Semiconductor Ltd. Ordinary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "TCOM",
+    "name": "Trip.com Group Limited American Depositary Shares",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "BNTX",
+    "name": "BioNTech SE American Depositary Share",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "GMAB",
+    "name": "Genmab A/S ADS",
+    "verdict": "요건 미달(관찰)",
+    "side": "other",
+    "strength": "watch"
+   },
+   {
+    "code": "SYM",
+    "name": "Symbotic Inc. Class A Common Stock",
+    "verdict": "편입 후보(유동시총 확인)",
+    "side": "add",
+    "strength": "watch"
+   },
+   {
+    "code": "MOS",
+    "name": "Mosaic Company (The) Common Stock",
+    "verdict": "편출 위험(하한 35% 미만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "NCLH",
+    "name": "Norwegian Cruise Line Holdings Ltd. Ordinary Shares",
+    "verdict": "편출 위험(하한 35% 미만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "MGM",
+    "name": "MGM Resorts International Common Stock",
+    "verdict": "편출 위험(하한 35% 미만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "ARE",
+    "name": "Alexandria Real Estate Equities Inc. Common Stock",
+    "verdict": "편출 위험(하한 35% 미만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "AOS",
+    "name": "A.O. Smith Corporation Common Stock",
+    "verdict": "편출 위험(하한 35% 미만)",
+    "side": "drop",
+    "strength": "watch"
+   },
+   {
+    "code": "WYNN",
+    "name": "Wynn Resorts Limited Common stock",
+    "verdict": "편출 위험(하한 35% 미만)",
+    "side": "drop",
+    "strength": "watch"
+   }
+  ]
+ },
+ "calendar": [
+  {
+   "index": "KOSPI200",
+   "event": "12월 정기변경 심사기준일(시총 판정 기간 종료)",
+   "date": "2026-10-30",
+   "kst_note": "10월 마지막 매매일",
+   "kind": "기준일",
+   "status": "확정",
+   "source": "KRX 방법론 §6.1.1 (변경월 전전월 말일), 집계 5~10월 6개월"
+  },
+  {
+   "index": "MSCI Korea",
+   "event": "11월 반기리뷰 시총 판정일(10월 마지막 10영업일 중 임의 1일)",
+   "date": "2026-10-19",
+   "kst_note": "10/19~10/30 중 하루",
+   "kind": "기준일",
+   "status": "확정",
+   "source": "MSCI GIMI §3.1.9"
+  },
+  {
+   "index": "Nasdaq-100",
+   "event": "연례 재구성 순위 기준일(11월 마지막 거래일)",
+   "date": "2026-11-30",
+   "kst_note": "미국 11/30 종가",
+   "kind": "기준일",
+   "status": "확정",
+   "source": "Nasdaq 방법론(2026-04)"
+  },
+  {
+   "index": "MSCI Korea",
+   "event": "11월 반기리뷰 발표",
+   "date": "2026-11-11",
+   "kst_note": "한국시간 11/12(목) 오전 7시경",
+   "kind": "발표",
+   "status": "확정",
+   "source": "MSCI index review dates"
+  },
+  {
+   "index": "KOSPI200",
+   "event": "12월 정기변경 발표",
+   "date": "2026-11-18",
+   "kst_note": "11월 중 장마감 후(작년 11/18, 6월분 5/22) — 방법론 §7.2 '11월 중'",
+   "kind": "발표",
+   "status": "예상",
+   "source": "KRX 방법론 §7.2 + 전년 관행"
+  },
+  {
+   "index": "FTSE",
+   "event": "12월 분기리뷰 발표",
+   "date": "2026-11-13",
+   "kst_note": "인디커티브 파일 공개(시총 재순위 없음 — IPO·분할·한도 이벤트만)",
+   "kind": "발표",
+   "status": "확정",
+   "source": "FTSE GEIS FAQ 2026"
+  },
+  {
+   "index": "MSCI Korea",
+   "event": "11월 반기리뷰 리밸런싱(종가)",
+   "date": "2026-11-30",
+   "kst_note": "11/30 종가",
+   "kind": "리밸런싱",
+   "status": "확정",
+   "source": "MSCI (효력 12/1)"
+  },
+  {
+   "index": "MSCI Korea",
+   "event": "11월 반기리뷰 효력",
+   "date": "2026-12-01",
+   "kst_note": "",
+   "kind": "효력",
+   "status": "확정",
+   "source": "MSCI index review dates"
+  },
+  {
+   "index": "S&P 500",
+   "event": "12월 분기 리밸런싱 발표",
+   "date": "2026-12-04",
+   "kst_note": "미국 12/4(금) 장마감 후 → 한국 12/5 오전",
+   "kind": "발표",
+   "status": "예상",
+   "source": "S&P DJI 관행(12월 첫 금요일)"
+  },
+  {
+   "index": "KOSPI200",
+   "event": "12월 정기변경 리밸런싱(종가)",
+   "date": "2026-12-10",
+   "kst_note": "12월 선물만기일(둘째 목) 종가",
+   "kind": "리밸런싱",
+   "status": "예상",
+   "source": "KRX 방법론"
+  },
+  {
+   "index": "KOSPI200",
+   "event": "12월 정기변경 효력",
+   "date": "2026-12-11",
+   "kst_note": "만기일 다음 매매일",
+   "kind": "효력",
+   "status": "예상",
+   "source": "KRX 방법론"
+  },
+  {
+   "index": "Nasdaq-100",
+   "event": "연례 재구성 발표",
+   "date": "2026-12-11",
+   "kst_note": "미국 12/11(금) 장마감 후 → 한국 12/12 오전",
+   "kind": "발표",
+   "status": "예상",
+   "source": "Nasdaq 관행(12월 둘째 금요일)"
+  },
+  {
+   "index": "S&P 500",
+   "event": "12월 분기 리밸런싱(종가)",
+   "date": "2026-12-18",
+   "kst_note": "미국 12/18(금) 종가 = 한국 12/19 새벽",
+   "kind": "리밸런싱",
+   "status": "예상",
+   "source": "셋째 금요일"
+  },
+  {
+   "index": "Nasdaq-100",
+   "event": "연례 재구성 리밸런싱(종가)",
+   "date": "2026-12-18",
+   "kst_note": "미국 12/18(금) 종가",
+   "kind": "리밸런싱",
+   "status": "예상",
+   "source": "셋째 금요일"
+  },
+  {
+   "index": "FTSE",
+   "event": "12월 분기리뷰 리밸런싱(종가)",
+   "date": "2026-12-18",
+   "kst_note": "12/18(금) 종가 → 12/21 개장 반영",
+   "kind": "리밸런싱",
+   "status": "확정",
+   "source": "FTSE GEIS FAQ 2026"
+  },
+  {
+   "index": "S&P 500",
+   "event": "12월 분기 리밸런싱 효력",
+   "date": "2026-12-21",
+   "kst_note": "개장 전",
+   "kind": "효력",
+   "status": "예상",
+   "source": "S&P DJI"
+  },
+  {
+   "index": "Nasdaq-100",
+   "event": "연례 재구성 효력",
+   "date": "2026-12-21",
+   "kst_note": "개장 전",
+   "kind": "효력",
+   "status": "예상",
+   "source": "Nasdaq"
+  },
+  {
+   "index": "KOSPI200",
+   "event": "KRX 산업분류(KRICS) 종목별 결과 공개 — 12월 정기변경 산업군 확정",
+   "date": "2026-10-26",
+   "kst_note": "KRX 지수 홈페이지 공개 예정 → data/overrides/krics.csv 반영",
+   "kind": "기준일",
+   "status": "예상",
+   "source": "아시아경제 2026-09-22"
+  },
+  {
+   "index": "KOSPI200",
+   "event": "KOSPI200 방법론 개정 시행(KRICS 9개 산업군·예비종목 폐지)",
+   "date": "2026-11-02",
+   "kst_note": "",
+   "kind": "기준일",
+   "status": "확정",
+   "source": "KRX 공지 2026-09-28"
+  },
+  {
+   "index": "FTSE",
+   "event": "3월 반기리뷰(시총 재순위) 발표",
+   "date": "2027-02-19",
+   "kst_note": "2월 하순(미확정)",
+   "kind": "발표",
+   "status": "예상",
+   "source": "FTSE 관행"
+  },
+  {
+   "index": "FTSE",
+   "event": "3월 반기리뷰 효력",
+   "date": "2027-03-22",
+   "kst_note": "3/19(금) 종가 후",
+   "kind": "효력",
+   "status": "예상",
+   "source": "FTSE 관행"
+  },
+  {
+   "index": "MSCI Japan",
+   "event": "11월 리뷰 시총 판정일(10월 마지막 10영업일 중 임의 1일)",
+   "date": "2026-10-19",
+   "kst_note": "10/19~10/30 중 하루",
+   "kind": "기준일",
+   "status": "확정",
+   "source": "MSCI GIMI §3.1.9"
+  },
+  {
+   "index": "MSCI Japan",
+   "event": "11월 리뷰 발표",
+   "date": "2026-11-11",
+   "kst_note": "한국시간 11/12(목) 오전 7시경 — 한국과 같은 날",
+   "kind": "발표",
+   "status": "확정",
+   "source": "MSCI index review dates"
+  },
+  {
+   "index": "MSCI Japan",
+   "event": "11월 리뷰 리밸런싱(종가)",
+   "date": "2026-11-30",
+   "kst_note": "도쿄 11/30 종가",
+   "kind": "리밸런싱",
+   "status": "확정",
+   "source": "MSCI (효력 12/1)"
+  }
+ ],
+ "backtests": [
+  {
+   "index": "KOSPI200",
+   "review": "2026-06",
+   "add": [
+    4,
+    4
+   ],
+   "drop": [
+    4,
+    4
+   ],
+   "note": "오판 1건. 산업군 규칙이 결과를 결정"
+  },
+  {
+   "index": "KOSPI200",
+   "review": "2025-12",
+   "add": [
+    7,
+    10
+   ],
+   "drop": [
+    6,
+    9
+   ],
+   "note": "놓친 종목 대부분이 합병·분할 수시변경과 겹친 경우"
+  },
+  {
+   "index": "MSCI Korea",
+   "review": "2026-08",
+   "add": [
+    1,
+    1
+   ],
+   "drop": [
+    4,
+    4
+   ],
+   "note": "편출 4건 중 2건은 유동시총 미달 - 규칙 그대로 재현"
+  },
+  {
+   "index": "MSCI Korea",
+   "review": "2025-11",
+   "add": [
+    1,
+    2
+   ],
+   "drop": [
+    1,
+    1
+   ],
+   "note": "놓친 1건은 편입선 바로 아래 '경합'"
+  },
+  {
+   "index": "Nasdaq-100",
+   "review": "2026-06",
+   "add": [
+    5,
+    5
+   ],
+   "drop": [
+    5,
+    5
+   ],
+   "note": "분기 변경(125위 밖 편출) 완전 재현"
+  },
+  {
+   "index": "Nasdaq-100",
+   "review": "2025-12",
+   "add": [
+    6,
+    6
+   ],
+   "drop": [
+    5,
+    6
+   ],
+   "note": "놓친 BIIB 가 버퍼 자격 규칙을 드러내 모델에 반영"
+  },
+  {
+   "index": "MSCI Japan",
+   "review": "워크포워드 3회",
+   "add": [
+    4,
+    6
+   ],
+   "drop": [
+    8,
+    15
+   ],
+   "note": "종목 수 조정 규칙으로 편출 5/15 -> 8/15"
+  }
+ ],
+ "reviews": [
+  {
+   "adds": [
+    {
+     "code": "336260",
+     "name": "두산퓨얼셀",
+     "verdict": "편입 경합(KRICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "006110",
+     "name": "삼아알미늄",
+     "verdict": "편입 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "002960",
+     "name": "한국쉘석유",
+     "verdict": "편입 경합(구 GICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "178920",
+     "name": "PI첨단소재",
+     "verdict": "(판정 없음)",
+     "status": "miss"
+    },
+    {
+     "code": "000500",
+     "name": "가온전선",
+     "verdict": "편입 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "103590",
+     "name": "일진전기",
+     "verdict": "편입 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "353200",
+     "name": "대덕전자",
+     "verdict": "편입 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "004800",
+     "name": "효성",
+     "verdict": "편입 경합(KRICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "031210",
+     "name": "서울보증보험",
+     "verdict": "편입 경합(KRICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "005440",
+     "name": "현대지에프홀딩스",
+     "verdict": "(판정 없음)",
+     "status": "miss"
+    },
+    {
+     "code": "001740",
+     "name": "SK네트웍스",
+     "verdict": "(판정 없음)",
+     "status": "miss"
+    }
+   ],
+   "drops": [
+    {
+     "code": "071320",
+     "name": "지역난방공사",
+     "verdict": "(판정 없음)",
+     "status": "miss"
+    },
+    {
+     "code": "456040",
+     "name": "OCI",
+     "verdict": "(판정 없음)",
+     "status": "miss"
+    },
+    {
+     "code": "006650",
+     "name": "대한유화",
+     "verdict": "편출 위험(KRICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "069260",
+     "name": "TKG휴켐스",
+     "verdict": "편출 위험(KRICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "005420",
+     "name": "코스모화학",
+     "verdict": "편출 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "002030",
+     "name": "아세아",
+     "verdict": "편출 위험(구 GICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "008730",
+     "name": "율촌화학",
+     "verdict": "편출 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "361610",
+     "name": "SK아이이테크놀로지",
+     "verdict": "편출 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "0220W0",
+     "name": "한화머시너리앤서비스홀딩스",
+     "verdict": "편출 유력",
+     "status": "hit_strong"
+    },
+    {
+     "code": "000670",
+     "name": "영풍",
+     "verdict": "(판정 없음)",
+     "status": "miss"
+    },
+    {
+     "code": "009240",
+     "name": "한샘",
+     "verdict": "편출 위험(구 GICS 분류 기준만)",
+     "status": "hit_watch"
+    },
+    {
+     "code": "001680",
+     "name": "대상",
+     "verdict": "편출 위험(KRICS 분류 기준만)",
+     "status": "hit_watch"
+    }
+   ],
+   "false_strong": [
+    {
+     "code": "018670",
+     "name": "SK가스",
+     "verdict": "편입 유력"
+    }
+   ],
+   "false_watch_n": 16,
+   "summary": {
+    "adds": {
+     "n": 11,
+     "strong": 4,
+     "watch": 4,
+     "miss": 3
+    },
+    "drops": {
+     "n": 12,
+     "strong": 4,
+     "watch": 5,
+     "miss": 3
+    }
+   },
+   "index": "KOSPI200",
+   "review": "2026-12 정기변경",
+   "announced": "2026-11-18",
+   "effective": "2026-12-11",
+   "source": "KRX 2026-12 정기변경 발표(언론 보도 2건 대조)"
+  },
+  {
+   "index": "MSCI Korea",
+   "review": "2026-11 반기리뷰",
+   "announced": "2026-11-12",
+   "effective": "2026-12-01",
+   "source": "MSCI 2026-11 Index Review (언론 보도)",
+   "note": "스탠다드 지수 편입·편출 없음 (스몰캡만 5 편입·4 편출)",
+   "adds": [],
+   "drops": [],
+   "no_change": true,
+   "false_strong": [
+    {
+     "code": "010130",
+     "name": "고려아연",
+     "verdict": "편입 유력"
+    }
+   ],
+   "watch_not_realized": [
+    {
+     "code": "036930",
+     "name": "주성엔지니어링",
+     "verdict": "편입 경합(시총 편입선 근접)"
+    },
+    {
+     "code": "000100",
+     "name": "유한양행",
+     "verdict": "편출 위험(유지선 근접)"
+    }
+   ],
+   "summary": {
+    "adds": {
+     "n": 0,
+     "strong": 0,
+     "watch": 0,
+     "miss": 0
+    },
+    "drops": {
+     "n": 0,
+     "strong": 0,
+     "watch": 0,
+     "miss": 0
+    }
+   }
+  }
+ ]
+}

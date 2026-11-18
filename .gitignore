@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+data/cache/
+logs/
+data/gsheet_*.txt
+data/overrides/calendar_event_ids.csv
+data/watchlist_registry.csv
+*.tmp
+~$*
+.claude/

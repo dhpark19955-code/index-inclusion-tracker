@@ -1,0 +1,8 @@
+﻿symbol,index,action,reason
+TRI,sp,exclude,캐나다 도미사일(TSX 주상장) — S&P 500 부적격
+SHOP,sp,exclude,캐나다 도미사일
+TTD,sp,exclude,2026-09-21 S&P 500 편출 — 1년간 재편입 심사 제외(~2027-09)
+POOL,sp,exclude,2026-06-22 S&P 500 편출 — 재편입 제외(~2027-06)
+CPB,sp,exclude,2026-06-22 S&P 500 편출 — 재편입 제외(~2027-06)
+SPCX,sp,note,시즈닝 2027-06(IPO 2026-06-12 +12개월) + FY2025 GAAP 순손실 $4.9B + 유동주식 10% 미만 — 3중 미달. 2026-06-04 S&P 메가캡 완화안 부결로 예외 없음
+CBRS,sp,note,"2026년 상장 — 시즈닝 2027년, Fast track 없음"
