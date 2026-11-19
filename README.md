@@ -4,6 +4,8 @@
 
 **대시보드(HTML):** https://dhpark19955-code.github.io/index-inclusion-tracker/ - 공식 발표 대조, 예측 스냅샷, 백테스트, 리뷰 일정 D-day
 
+**패시브 수급 트래커(HTML):** https://dhpark19955-code.github.io/index-inclusion-tracker/passive.html - 편입·편출 종목의 예상 패시브 매수·매도 금액(예상 비중 × 추종 ETF 하한 AUM)과 소화일수, KODEX 200 설정·환매로 본 종목별 실제 패시브 순매수(5·20·60일). ETF 하한은 공개 ETF 보유내역으로 집계한 최소치이고, 업계 전체 환산은 추론값입니다. 운영본에서 생성해 수동으로 갱신합니다.
+
 | 항목 | 내용 |
 |---|---|
 | 지수 | KOSPI200 · MSCI Korea · MSCI Japan · FTSE All-World Korea · Nasdaq-100 · S&P 500 |
@@ -136,6 +138,7 @@ python -I -X utf8 scripts/backtest_kospi200.py    # 백테스트 (backtest_msci 
 
 ```
 index.html, data.json      대시보드 (GitHub Pages)
+passive.html               패시브 수급 트래커 (데이터 내장 단일 파일, GitHub Pages)
 scripts/                   수집(fetch_*) → 지표(kr_metrics, ftse_region) → 판정(kospi200_model, screen_kr, screen_us, msci_jp)
                            → 변화 감지(diffs, events) → 리포트(build_report, watchlist) → run_all / backtest_* / build_site_data
 data/overrides/            사람이 고치는 입력 CSV 9개
